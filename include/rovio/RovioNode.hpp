@@ -668,13 +668,9 @@ class RovioNode{
         state.updateMultiCameraExtrinsics(&mpFilter_->multiCamera_);
         MXD& cov = mpFilter_->safe_.cov_;
         imuOutputCT_.transformState(state,imuOutput_);
-// original friend method
-//std::cout <<std::fixed<<mpFilter_->safe_.t_<< "," << imuOutput_.WrWB()(0) << "," << imuOutput_.WrWB()(1)<< "," << imuOutput_.WrWB()(2)<< std::endl;
-//std::cout <<std::fixed<<imuOutput_.qBW().x()<< "," <<imuOutput_.qBW().y()<< "," <<imuOutput_.qBW().z()<< "," <<-imuOutput_.qBW().w()<< std::endl;
-  
-  std::cout <<std::fixed<<mpfilter_->safe_.t_<< "," << imuOutput_.WrWB()(0) << "," << imuOutput_.WrWB()(1)<< "," <<
-  imuOutput_.WrWB()(2)<< "," <<imuOutput_.qBW().x()<< "," <<imuOutput_.qBW().y()<< "," <<imuOutput_.qBW().z()<< "," 
-  <<-imuOutput_.qBW().w()<< std::endl;
+// add
+     std::cout <<std::fixed<<mpFilter_->safe_.t_<< "," << imuOutput_.WrWB()(0) << "," << imuOutput_.WrWB()(1)<< "," << imuOutput_.WrWB()(2)<< ","<<imuOutput_.qBW().x()<< "," <<imuOutput_.qBW().y()<< "," <<imuOutput_.qBW().z()<< "," <<-imuOutput_.qBW().w()<< std::endl;
+
    
       // Cout verbose for pose measurements
         if(mpImgUpdate_->verbose_){
